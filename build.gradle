@@ -11,5 +11,5 @@ repositories {
 }
 
 dependencies {
-
+    compile 'org.springframework:spring-context:5.2.3.RELEASE'
 }
