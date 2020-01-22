@@ -1,4 +1,4 @@
-package sort;
+package core.sort;
 
 public interface TreeVisitor {
 //    static void visit(Tree node);

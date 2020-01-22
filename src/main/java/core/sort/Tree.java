@@ -1,4 +1,4 @@
-package sort;
+package core.sort;
 
 public class Tree {
 
