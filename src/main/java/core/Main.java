@@ -1,21 +1,37 @@
 package core;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+import core.model.Person;
 import core.sort.RandomTree;
 import core.sort.Tree;
 import core.support.Utils;
 
-import static core.sort.SortUtils.bubble;
-import static core.sort.SortUtils.insertion;
-import static core.sort.SortUtils.merge;
-import static core.sort.SortUtils.selection;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static core.algorithms.TopAgeForName.getTopAgeForNameByChatGPT;
+import static core.sort.SortUtils.*;
 
 public class Main {
 
     public static void main(String[] args) {
+
+    }
+
+    public static void testTopAgeForName() {
+        List<Person> persons = List.of(
+                new Person("alex", 10),
+                new Person("dima", 13),
+                new Person("alex", 17),
+                new Person("leha", 22),
+                new Person("dima", 15),
+                new Person("alex", 9),
+                new Person("alex", 20),
+                new Person("dima", 2));
+        List<Person> topAgeForName = getTopAgeForNameByChatGPT(persons);
+        for (Person p : topAgeForName) {
+            System.out.println(p);
+        }
     }
 
     public static void testBubbleSort() {
@@ -65,12 +81,12 @@ public class Main {
 
         //без терминального метода в консоль ничего не выведется
         integerList.stream()
-            .peek(System.out::println)
-            .count();
+                .peek(System.out::println)
+                .count();
 
         //foreach является терминальным, поэтому все ок
         integerList.stream()
-            .forEach(System.out::println);
+                .forEach(System.out::println);
     }
 
     public static void testPalindrome() {
