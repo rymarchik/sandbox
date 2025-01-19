@@ -5,8 +5,14 @@ import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import spring.config.MyConfig;
+import spring.entity.animal.Cat;
+import spring.entity.animal.Dog;
+import spring.entity.animal.Parrot;
 
 @Configuration
 @EnableAutoConfiguration
@@ -14,15 +20,25 @@ import org.springframework.context.annotation.Configuration;
 public class SpringBootApplication {
 
     public static void main(String[] args) {
-        ApplicationContext ctx = SpringApplication.run(SpringBootApplication.class, args);
+        ApplicationContext appContext = SpringApplication.run(SpringBootApplication.class, args);
 
-        System.out.println("Let's inspect the beans provided by Spring Boot:");
+        Arrays.stream(appContext.getBeanDefinitionNames())
+            .sorted()
+            .forEach(System.out::println);
 
-        String[] beanNames = ctx.getBeanDefinitionNames();
-        Arrays.sort(beanNames);
-        for (String beanName : beanNames) {
-            System.out.println(beanName);
-        }
+        ApplicationContext myContext = new AnnotationConfigApplicationContext(MyConfig.class);
+
+        Arrays.stream(myContext.getBeanDefinitionNames())
+            .sorted()
+            .forEach(System.out::println);
+
+        Dog dog = (Dog) myContext.getBean("getDog");
+        Dog sameDog = myContext.getBean(Dog.class);
+        Parrot dodoParrot = myContext.getBean(Parrot.class); //only 1 visible in this context
+        Parrot keshaParrot = appContext.getBean("parrot", Parrot.class); //case-sensitive component name
+        Cat kisa = myContext.getBean("getCat", Cat.class);
+        Cat dodoKiller = myContext.getBean("getCatKiller", Cat.class);
+        Cat keshaKiller = appContext.getBean("getCatKiller", Cat.class);
     }
 
 }

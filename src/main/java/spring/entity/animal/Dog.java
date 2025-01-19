@@ -1,13 +1,10 @@
 package spring.entity.animal;
 
-import org.springframework.stereotype.Component;
+import lombok.Getter;
 
-//@Component
+@Getter
 public class Dog {
 
-    private String name = "Барсик";
+    private final String name = "Барсик";
 
-    public String getName() {
-        return name;
-    }
 }

@@ -1,20 +1,13 @@
 package spring.entity.animal;
 
-import org.springframework.stereotype.Component;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-//@Component
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cat {
 
     private String name;
-
-    public Cat() {
-    }
-
-    public Cat(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
 }

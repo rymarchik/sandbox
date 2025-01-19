@@ -2,12 +2,16 @@ package spring.entity.animal;
 
 import org.springframework.stereotype.Component;
 
-//@Component("kesha")
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Component
 public class Parrot {
 
     private String name = "Кеша";
 
-    public String getName() {
-        return name;
-    }
 }
