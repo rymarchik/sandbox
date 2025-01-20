@@ -1,4 +1,4 @@
-package core.algorithms;
+package core.algorithms.leetcode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -8,7 +8,7 @@ import java.util.Queue;
  * Основная идея: пройти по каждому элементу матрицы, начиная новый поиск, если элемент равен 1 (часть суши), и увеличивать
  * счётчик островов.
  */
-public class NumberOfIslands {
+public class NumberOfIslands_200 {
 
     /**
      * Проходим по каждой клетке сетки.

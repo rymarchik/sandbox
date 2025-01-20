@@ -1,11 +1,18 @@
 package core.algorithms;
 
-import core.model.Person;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
+import core.model.Person;
 
 /**
  * SELECT name, age from Person GROUP BY name HAVING MAX(age)
@@ -72,5 +79,21 @@ public class TopAgeForName {
                 .toList();
 
         return resultListOption3;
+    }
+
+    public static void testTopAgeForName() {
+        List<Person> persons = List.of(
+            new Person("alex", 10),
+            new Person("dima", 13),
+            new Person("alex", 17),
+            new Person("leha", 22),
+            new Person("dima", 15),
+            new Person("alex", 9),
+            new Person("alex", 20),
+            new Person("dima", 2));
+        List<Person> topAgeForName = getTopAgeForNameByChatGPT(persons);
+        for (Person p : topAgeForName) {
+            System.out.println(p);
+        }
     }
 }

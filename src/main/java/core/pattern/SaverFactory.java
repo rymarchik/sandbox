@@ -1,12 +1,12 @@
-package core.support;
+package core.pattern;
+
+import java.util.Map;
+import java.util.function.Supplier;
 
 import core.model.saver.DatabaseSaver;
 import core.model.saver.FileSaver;
 import core.model.saver.Saver;
 import core.model.saver.ServerSaver;
-
-import java.util.Map;
-import java.util.function.Supplier;
 
 public class SaverFactory {
 

@@ -1,4 +1,4 @@
-package core.common;
+package core.tree;
 
 public class TreeHeight {
 

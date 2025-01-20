@@ -1,4 +1,4 @@
-package core.support.pattern.abstractfactory;
+package core.pattern.abstractfactory;
 
 import core.model.vehicle.ElectricVehicle;
 import core.model.vehicle.FutureVehicleElectricCar;

@@ -16,7 +16,8 @@ public class MinimalNumberOfPackages {
         long requiredLargePackages = (items + largePackageSize - 1) / largePackageSize;
         if (requiredLargePackages <= availableLargePackages) {
             return requiredLargePackages;
-        } else {
+        }
+        else {
             long remainingItems = items - availableLargePackages * largePackageSize;
             if (remainingItems > availableSmallPackages * smallPackageSize) {
                 return -1;
@@ -24,5 +25,9 @@ public class MinimalNumberOfPackages {
             long requiredSmallPackages = (remainingItems + smallPackageSize - 1) / smallPackageSize;
             return availableLargePackages + requiredSmallPackages;
         }
+    }
+
+    public static void case1() {
+        System.out.println(minimalNumberOfPackages(13, 3, 10));
     }
 }

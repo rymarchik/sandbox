@@ -1,6 +1,6 @@
-package core.algorithms;
+package core.algorithms.leetcode;
 
-public class GameOfLife {
+public class GameOfLife_289 {
 
     public static String gameOfLifeStrings(String str) {
         String[] strArray = str.split("_");

@@ -1,4 +1,4 @@
-package core.support.pattern.factorymethod;
+package core.pattern.factorymethod;
 
 import core.model.vehicle.MotorVehicle;
 import core.model.vehicle.Motorcycle;

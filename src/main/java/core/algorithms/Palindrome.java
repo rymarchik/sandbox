@@ -1,9 +1,9 @@
-package core.support;
+package core.algorithms;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Utils {
+public class Palindrome {
 
     public static boolean checkIfPalindrome(int number) {
         List<Integer> numberList = new ArrayList<>();
@@ -11,7 +11,7 @@ public class Utils {
         recursion(number, numberList);
 
         for (int i = 0; i < numberList.size() / 2; i++) {
-            if (!numberList.get(i).equals(numberList.get(numberList.size() -1 - i))) {
+            if (!numberList.get(i).equals(numberList.get(numberList.size() - 1 - i))) {
                 return false;
             }
         }
@@ -23,7 +23,7 @@ public class Utils {
             return true;
         }
         else {
-            if (s.substring(0, 1).equals(s.substring(s.length() - 1, s.length()))) {
+            if (s.substring(0, 1).equals(s.substring(s.length() - 1))) {
                 if (s.length() == 2) {
                     return true;
                 }
@@ -43,5 +43,12 @@ public class Utils {
             numberList.add(n % 10);
             recursion(n / 10, numberList);
         }
+    }
+
+    public static void testPalindrome() {
+        int num = 12345321;
+        String str = "dad";
+        System.out.println(checkIfPalindrome(num));
+        System.out.println(checkIfPalindrome(str));
     }
 }
