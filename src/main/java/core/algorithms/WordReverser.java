@@ -1,6 +1,7 @@
 package core.algorithms;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 // input -  "now is your moment"
@@ -8,6 +9,7 @@ import java.util.stream.Collectors;
 public class WordReverser {
 
     public static String reverseWords(String input) {
+        Objects.requireNonNull(input, "Input string cannot be null");
         StringBuilder result = new StringBuilder(input.length());
         StringBuilder current = new StringBuilder();
 
@@ -17,7 +19,8 @@ public class WordReverser {
             if (c == ' ') {
                 result.append(current.reverse()).append(' ');
                 current.setLength(0); // сброс без новой аллокации
-            } else {
+            }
+            else {
                 current.append(c);
             }
         }
@@ -30,19 +33,24 @@ public class WordReverser {
 
     // менее оптимально
     public static String reverseWordsWithSplit(String input) {
+        Objects.requireNonNull(input, "Input string cannot be null");
         String[] words = input.split(" ");
-        StringBuilder sb = new StringBuilder(input.length());
+        StringBuilder result = new StringBuilder(input.length());
+        StringBuilder current = new StringBuilder();
 
-        for (int i = 0; i < words.length; i++) {
-            sb.append(new StringBuilder(words[i]).reverse());
-            if (i < words.length - 1) sb.append(' ');
+        for (String word : words) {
+            current.setLength(0);
+            current.append(word).reverse();
+            result.append(current).append(' ');
         }
+        result.setLength(result.length() - 1);
 
-        return sb.toString();
+        return result.toString();
     }
 
     // еще менее оптимально, но супер компактно
     public static String reverseWordsWithStream(String input) {
+        Objects.requireNonNull(input, "Input string cannot be null");
         return Arrays.stream(input.split(" "))
             .map(word -> new StringBuilder(word).reverse())
             .collect(Collectors.joining(" "));
