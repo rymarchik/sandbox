@@ -14,24 +14,15 @@ public class ArrayManipulation {
         int n = a.length;
         int[] r = new int[n];
 
-        if (n == 0) return r;
-
-        if (n == 1) {
-            r[0] = a[0];
-            return r;
+        for (int i = 0; i < n; i++) {
+            r[i] = a[i];
+            if (i > 0) {
+                r[i] += a[i - 1];
+            }
+            if (i < n - 1) {
+                r[i] += a[i + 1];
+            }
         }
-
-        // левый край
-        r[0] = a[0] + a[1];
-
-        // середина
-        for (int i = 1; i < n - 1; i++) {
-            r[i] = a[i - 1] + a[i] + a[i + 1];
-        }
-
-        // правый край
-        r[n - 1] = a[n - 2] + a[n - 1];
-
         return r;
     }
 
