@@ -1,4 +1,4 @@
-package core.sort;
+package core.exercise.sort;
 
 import java.util.Arrays;
 

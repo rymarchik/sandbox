@@ -1,4 +1,4 @@
-package core.tree;
+package core.exercise.tree;
 
 import java.util.ArrayList;
 import java.util.List;
