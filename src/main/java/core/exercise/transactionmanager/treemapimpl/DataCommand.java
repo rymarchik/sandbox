@@ -1,4 +1,4 @@
-package core.algorithms.transactionmanager.treemapimpl;
+package core.exercise.transactionmanager.treemapimpl;
 
 import java.util.Map;
 import java.util.TreeMap;

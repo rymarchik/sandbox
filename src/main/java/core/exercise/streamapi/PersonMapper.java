@@ -1,4 +1,4 @@
-package core.exercise.personprofession;
+package core.exercise.streamapi;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,5 +15,8 @@ public class PersonMapper {
             .map(Person::new)
             .collect(Collectors.groupingBy(person -> person.profession().substring(0, 1),
                 Collectors.toCollection(ArrayList::new)));
+    }
+
+    public record Person(String profession) {
     }
 }

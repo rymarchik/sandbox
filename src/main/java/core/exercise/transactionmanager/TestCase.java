@@ -1,6 +1,6 @@
-package core.algorithms.transactionmanager;
+package core.exercise.transactionmanager;
 
-import core.algorithms.transactionmanager.treemapimpl.DataCommand;
+import core.exercise.transactionmanager.treemapimpl.DataCommand;
 
 public class TestCase {
 

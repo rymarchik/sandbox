@@ -1,4 +1,4 @@
-package core.algorithms.transactionmanager.hashmapimpl;
+package core.exercise.transactionmanager.hashmapimpl;
 
 import java.util.HashMap;
 import java.util.Map;
