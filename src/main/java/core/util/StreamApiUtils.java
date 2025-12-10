@@ -36,33 +36,14 @@ public class StreamApiUtils {
             .reduce(5, Integer::sum));
     }
 
-    public static void case1() {
+    public static void main(String[] args) {
         List<Integer> integers = List.of(1, 2, 3, 4);
+
         sumIntegers(integers); // 10
-    }
-
-    public static void case2() {
-        List<Integer> integers = List.of(1, 2, 3, 4);
         sumIntegersInParallel(integers); // 10
-    }
-
-    public static void case3() {
-        List<Integer> integers = List.of(1, 2, 3, 4);
         sumIntegersWithNullIdentity(integers); // 10
-    }
-
-    public static void case4() {
-        List<Integer> integers = List.of(1, 2, 3, 4);
         sumIntegersWithNullIdentityInParallel(integers); // 10
-    }
-
-    public static void case5() {
-        List<Integer> integers = List.of(1, 2, 3, 4);
         sumIntegersWithNotNullIdentity(integers); // 15
-    }
-
-    public static void case6() {
-        List<Integer> integers = List.of(1, 2, 3, 4);
         sumIntegersWithNotNullIdentityInParallel(integers); // 30
     }
 }
