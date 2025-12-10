@@ -10,6 +10,26 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.tuple.Pair;
 
+/**
+ * Utility class for simulating a time-based currency exchange service.
+ *
+ * The exchanger stores historical exchange rates between currency pairs using timestamps.
+ * It periodically updates rates to simulate data from an external API.
+ *
+ * Features:
+ * - Add new exchange rates with timestamps.
+ * - Query the most recent valid exchange rate for a specific time.
+ * - Convert currency amounts using historical rates.
+ * - Periodically auto-update rates every 2 seconds.
+ *
+ * Throws:
+ * - {@code IllegalArgumentException} if no rates are available for a given currency pair.
+ * - {@code IllegalStateException} if no rate exists for the requested timestamp.
+ *
+ * Example:
+ * - convert("USD", "BYN", 100, LocalDateTime.of(2025, 1, 25, 18, 0))
+ *   → returns the amount in BYN using the latest available rate before 18:00.
+ */
 public class CurrencyExchanger {
 
     private final Map<Pair<String, String>, TreeMap<LocalDateTime, Double>> exchangeRates = new HashMap<>();

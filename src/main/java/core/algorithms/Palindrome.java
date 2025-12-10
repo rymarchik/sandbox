@@ -3,6 +3,20 @@ package core.algorithms;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Utility class for checking whether a number or a string is a palindrome.
+ *
+ * A palindrome is a value that reads the same forward and backward.
+ *
+ * Supports:
+ * - Integer input: checks if the number's digits form a palindrome.
+ * - String input: checks if the characters form a palindrome (case-sensitive).
+ *
+ * Example:
+ * - checkIfPalindrome(12321) → true
+ * - checkIfPalindrome("racecar") → true
+ * - checkIfPalindrome("hello") → false
+ */
 public class Palindrome {
 
     public static boolean checkIfPalindrome(int number) {

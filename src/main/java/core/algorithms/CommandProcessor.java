@@ -3,6 +3,24 @@ package core.algorithms;
 import java.io.IOException;
 import java.io.Reader;
 
+/**
+ * Utility class that processes a character stream of arithmetic commands.
+ *
+ * Each character in the input stream represents a simple operation on a long value:
+ * - '+' → increment result by 1
+ * - '-' → decrement result by 1
+ * - '*' → multiply result by 2
+ * - '/' → divide result by 2 (integer division)
+ *
+ * The result starts at 0 and is modified sequentially as characters are read.
+ *
+ * Throws:
+ * - {@code ArithmeticException} if the result overflows or underflows during operations.
+ * - {@code IllegalArgumentException} if an unknown character is encountered.
+ * - {@code IllegalStateException} if the stream contains no characters.
+ *
+ * Example input stream: "+*+/" → result becomes 1 → 2 → 3 → 1
+ */
 public class CommandProcessor {
 
     public long process(Reader stream) throws IOException {
