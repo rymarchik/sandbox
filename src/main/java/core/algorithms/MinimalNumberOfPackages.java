@@ -9,6 +9,8 @@ package core.algorithms;
  */
 public class MinimalNumberOfPackages {
 
+    // т.к. можно оставить пустое место в пакетах, то использование ДП необязательно, Жадный алгоритм хорошо справится с этой
+    // задачей
     public static long minimalNumberOfPackages(long items, long availableLargePackages, long availableSmallPackages) {
         final int largePackageSize = 5;
         final int smallPackageSize = 2;
@@ -27,7 +29,7 @@ public class MinimalNumberOfPackages {
         }
     }
 
-    public static void case1() {
+    public static void main(String[] args) {
         System.out.println(minimalNumberOfPackages(13, 3, 10));
     }
 }
